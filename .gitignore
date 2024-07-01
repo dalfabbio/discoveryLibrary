@@ -1,0 +1,29 @@
+# Node modules directory
+node_modules/
+
+# Log files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables file
+src/env/.env
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Windows files
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Compiled output
+*.o
+*.obj
+
+# Dependency directories
+jspm_packages/
