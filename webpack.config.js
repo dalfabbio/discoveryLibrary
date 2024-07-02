@@ -16,7 +16,10 @@ module.exports = {
 
   devServer: {
     static: './dist',
-    open: true
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
 
   optimization: {

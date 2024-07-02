@@ -1,1 +1,1 @@
-import "./styles/output.css";
+import "./styles/style.css";
