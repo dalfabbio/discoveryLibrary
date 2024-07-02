@@ -1,1 +1,1 @@
-import "./styles/prova.scss";
+import "./styles/output.css";
