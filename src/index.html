@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body class="bg-gradient-to-r from-cyan-500 to-blue-500">
+<body>
+  <div class="py-11 px-11 h-screen debugger flex-col items-start justify-center w-screen">
+    <div class="flex-col debugger justify-center text-center">
+      <p>Discovery library</p>
+      <p>Let yourself dive into new worlds and discover stories</p>
+    </div>
   
-  <div class="h-4 w-24 bg-gradient-to-r from-cyan-500 to-blue-500 "></div>
-  <h1 class="">PROVA</h1>
-  testo random
+    <form id="search">
+      <input class="debugger" type="text" id="searchBox" name="searchBox" placeholder="search for your favourite book">
+      <button type="submit" class="border-t-neutral-900"> search</button>
+  </form>
+  </div>
+
+  <div id="resultsContainer" class="flex">
+
+  </div>
+
+
 </body>
 </html>

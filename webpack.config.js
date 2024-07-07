@@ -1,4 +1,3 @@
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -15,7 +14,7 @@ module.exports = {
   },
 
   devServer: {
-    static: './dist',
+    static: './src',
     open: true,
     hot: true,
     compress: true,
