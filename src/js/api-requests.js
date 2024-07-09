@@ -5,7 +5,7 @@ export const OL_API_KEY = "https://openlibrary.org";
 export const getBooks = async function (subject) {
   try{
     if (subject){
-    const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=10`); //limit=10 defines how many books to retrieve
+    const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=5`); //limit=5 defines how many books to retrieve
     console.log(subject);
     console.log(response);
     console.log(response.data["work_count"]);
@@ -25,10 +25,16 @@ export const getCover = async function getCover(key) {
     const response = await axios.get(coverUrl);
     if (response.status === 200) return coverUrl;
   } catch (error) {
-    if (error.response && error.response.status === 404){
       return fallbackUrl;
-    } else {
-      return fallbackUrl;
-    }
+  }
+  }
+
+  export async function getDetails(key) {
+    try{
+    const detailsUrl = `https://openlibrary.org${key}.json`;
+    const response = await axios.get(detailsUrl);
+    return response;
+  } catch (e) {
+    console.log("sorry, no results found due to some malfunction / API REQUEST");
   }
   }
