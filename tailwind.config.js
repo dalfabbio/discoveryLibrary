@@ -1,22 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   
-  mode: 'jit',
-  purge: [
-    './dist/*.html',
-    './src/*.html'
-  ],
+  content: ["./src/**/*.{js,html}"],
   theme: {
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
     extend: {},
   },
   plugins: [],
 }
-
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// };

@@ -1,5 +1,6 @@
 import { searchBooks, searchForm } from "./book-search.js";
 import { getCover, getDetails } from "./api-requests.js";
+
 export const resultsContainer = document.querySelector("#resultsContainer");
 
 //function to display results from the research
@@ -26,16 +27,17 @@ export async function displaySearchResults() {
 }
 
 async function displayBookResults(book) {
+  const coverUrl = // await getCover(book.cover_id);
+  // seems faster with the direct url, but with console.time it seems to be the same; maybe check later
+  `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false`;
   const bookCard = document.createElement("div");
   const cover = document.createElement("img");
   const author = document.createElement("div");
   const title = document.createElement("div");
   bookCard.append(cover, author, title);
   bookCard.classList.add("flex-col", "debugger", "cursor-pointer");
-  const coverUrl = await getCover(book.cover_id);
   cover.src = coverUrl;
-  // seems faster with the direct url, but with console.time it seems to be the same; maybe check later
-  //`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false`;
+  
   const authorName = book.authors[0].name;
   author.innerText = authorName
   title.innerText = book.title;
@@ -62,16 +64,32 @@ async function displayDetails(bookKey, author, cover) { //the API for the detail
   const detailsAuthor = document.createElement("div");
   const detailsDescription = document.createElement("div");
   const detailsCover = document.createElement("img");
+  const detailsClose = document.createElement("div");
+  
   // const findOutMore = document.createElement("a");
-  detailsCard.classList.add("flex-col", "debugger", "z-20", "w-1/2", "y-1/2");
-  detailsCard.append(detailsCover, detailsAuthor, detailsTitle, detailsDescription);
-  detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "items-center", "z-10", "backdrop-blur-sm");
+  detailsContainer.classList.add("flex", "justify-center", "absolute", "top-5", "left-50", "right-0","items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
+  detailsCard.classList.add("flex-col", "debugger",  "sm:w-1/2", "lg:w-1/3", "bg-white", "rounded", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsClose.classList.add("absolute", "right-0", "top-0", "p-5", "cursor-pointer");
+  detailsCard.append(detailsCover, detailsAuthor, detailsTitle, detailsDescription, detailsClose);
+
   detailsContainer.append(detailsCard);
   document.body.append(detailsContainer);
+
   //content for the details
   detailsTitle.innerText = details.data.title;
   detailsAuthor.innerText = author;
   detailsCover.src = cover;
   console.log(details);
-  detailsDescription.innerText = (details.data.description ? details.data.description : "No description available.");
+  detailsDescription.innerText = typeof details.data.description == "object" ? details.data.description.value : details.data.description; //description format is not always the same, might be an object
+detailsClose.innerText = "X";
+
+
+  detailsContainer.addEventListener("click", (event) => {
+    if (event.target === detailsContainer) {
+      detailsContainer.remove();
+    }
+  })
+  detailsClose.addEventListener("click", (event) => {
+      detailsContainer.remove();
+  })
   }

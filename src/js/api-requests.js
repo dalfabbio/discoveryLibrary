@@ -33,6 +33,7 @@ export const getCover = async function getCover(key) {
     try{
     const detailsUrl = `https://openlibrary.org${key}.json`;
     const response = await axios.get(detailsUrl);
+    console.log("getDetails: ",response)
     return response;
   } catch (e) {
     console.log("sorry, no results found due to some malfunction / API REQUEST");
