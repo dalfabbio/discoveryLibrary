@@ -4,8 +4,8 @@ import {displaySearchResults} from "./js/display-results.js";
 
 searchForm.addEventListener("submit", (e)=>{
   e.preventDefault();
+  resultsContainer.innerHTML = "";
   displaySearchResults();
-  
 }
 );
 

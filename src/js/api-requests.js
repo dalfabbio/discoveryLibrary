@@ -3,18 +3,18 @@ export const OL_API_KEY = "https://openlibrary.org";
 
 //call to get the array of the books with the given subject
 export const getBooks = async function (subject) {
-  try{
-    if (subject){
-    const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=5`); //limit=5 defines how many books to retrieve
-    console.log(subject);
-    console.log(response);
-    console.log(response.data["work_count"]);
-    return response;
-  } else return
-   }
-   catch (error){
-  console.log("an error occured from the server / API REQUEST");
-}
+  try {
+    if (subject) {
+      const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=5`); //limit=5 defines how many books to retrieve
+      console.log(subject);
+      console.log(response);
+      console.log(response.data["work_count"]);
+      return response;
+    } else return
+  }
+  catch (error) {
+    console.log("an error occured from the server / API REQUEST");
+  }
 }
 
 
@@ -25,17 +25,17 @@ export const getCover = async function getCover(key) {
     const response = await axios.get(coverUrl);
     if (response.status === 200) return coverUrl;
   } catch (error) {
-      return fallbackUrl;
+    return fallbackUrl;
   }
-  }
+}
 
-  export async function getDetails(key) {
-    try{
+export async function getDetails(key) {
+  try {
     const detailsUrl = `https://openlibrary.org${key}.json`;
     const response = await axios.get(detailsUrl);
-    console.log("getDetails: ",response)
+    console.log("getDetails: ", response)
     return response;
   } catch (e) {
     console.log("sorry, no results found due to some malfunction / API REQUEST");
   }
-  }
+}

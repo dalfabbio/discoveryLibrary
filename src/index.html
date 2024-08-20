@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div class="py-11 px-11 debugger flex-col items-start justify-center w-screen">
-    <div class="flex-col debugger justify-center text-center">
-      <p>Discovery library</p>
-      <p>Let yourself dive into new worlds and discover stories</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="py-11 px-11 debugger flex-col items-start justify-center w-screen"
+    >
+      <div class="flex-col debugger justify-center text-center">
+        <p>Discovery library</p>
+        <p>Let yourself dive into new worlds and discover stories</p>
+      </div>
+
+      <form id="search">
+        <input
+          class="debugger"
+          type="text"
+          id="searchBox"
+          name="searchBox"
+          placeholder="search for your favourite book"
+        />
+        <button type="submit" class="border-t-neutral-900">search</button>
+      </form>
     </div>
-  
-    <form id="search">
-      <input class="debugger" type="text" id="searchBox" name="searchBox" placeholder="search for your favourite book">
-      <button type="submit" class="border-t-neutral-900"> search</button>
-  </form>
-  </div>
 
-  <div id="resultsContainer" class="flex">
+    <div id="resultsContainer" class="flex"></div>
 
-  </div>
-
-
-</body>
+    <div id="my-list" class="fixed debugger w-1/4 top-3 right-0">
+      <p class="text-center text-3xl">Your list</p>
+      <ul></ul>
+    </div>
+  </body>
 </html>

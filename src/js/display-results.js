@@ -1,6 +1,6 @@
 import { searchBooks, searchForm } from "./book-search.js";
 import { getCover, getDetails } from "./api-requests.js";
-
+import { updatePersonalList } from "./personal-list.js";
 export const resultsContainer = document.querySelector("#resultsContainer");
 
 //function to display results from the research
@@ -27,23 +27,31 @@ export async function displaySearchResults() {
 }
 
 async function displayBookResults(book) {
-  const coverUrl = // await getCover(book.cover_id);
-  // seems faster with the direct url, but with console.time it seems to be the same; maybe check later
-  `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false`;
   const bookCard = document.createElement("div");
+  const coverUrl = // await getCover(book.cover_id);
+    // seems faster with the direct url, but with console.time it seems to be the same; maybe check later
+    `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false`;
   const cover = document.createElement("img");
   const author = document.createElement("div");
   const title = document.createElement("div");
   bookCard.append(cover, author, title);
   bookCard.classList.add("flex-col", "debugger", "cursor-pointer");
   cover.src = coverUrl;
-  
   const authorName = book.authors[0].name;
-  author.innerText = authorName
+  author.innerText = authorName;
   title.innerText = book.title;
   resultsContainer.append(bookCard);
-  bookCard.addEventListener("click", ()=> displayDetails(book.key, authorName, coverUrl));
+  bookCard.addEventListener("click", () => displayDetails(book.key, authorName, coverUrl));
 
+  //for personal list
+  const addToPersonalList = document.createElement("button");
+  bookCard.append(addToPersonalList);
+  addToPersonalList.innerText = localStorage.hasOwnProperty(book.title) ?
+    "Remove from my list" : "Add to my list";
+  addToPersonalList.addEventListener("click", (e) => {
+    e.stopPropagation();
+    updatePersonalList(authorName, title.innerText, addToPersonalList);
+  });
 }
 
 function noSubjectProvided() {
@@ -65,10 +73,10 @@ async function displayDetails(bookKey, author, cover) { //the API for the detail
   const detailsDescription = document.createElement("div");
   const detailsCover = document.createElement("img");
   const detailsClose = document.createElement("div");
-  
+
   // const findOutMore = document.createElement("a");
-  detailsContainer.classList.add("flex", "justify-center", "absolute", "top-5", "left-50", "right-0","items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("flex-col", "debugger",  "sm:w-1/2", "lg:w-1/3", "bg-white", "rounded", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsContainer.classList.add("flex", "justify-center", "absolute", "top-5", "left-50", "right-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
+  detailsCard.classList.add("flex-col", "debugger", "sm:w-1/2", "lg:w-1/3", "bg-white", "rounded", "shadow-lg", "p-5", "justify-center", "relative");
   detailsClose.classList.add("absolute", "right-0", "top-0", "p-5", "cursor-pointer");
   detailsCard.append(detailsCover, detailsAuthor, detailsTitle, detailsDescription, detailsClose);
 
@@ -81,7 +89,7 @@ async function displayDetails(bookKey, author, cover) { //the API for the detail
   detailsCover.src = cover;
   console.log(details);
   detailsDescription.innerText = typeof details.data.description == "object" ? details.data.description.value : details.data.description; //description format is not always the same, might be an object
-detailsClose.innerText = "X";
+  detailsClose.innerText = "X";
 
 
   detailsContainer.addEventListener("click", (event) => {
@@ -89,7 +97,7 @@ detailsClose.innerText = "X";
       detailsContainer.remove();
     }
   })
-  detailsClose.addEventListener("click", (event) => {
-      detailsContainer.remove();
+  detailsClose.addEventListener("click", () => {
+    detailsContainer.remove();
   })
-  }
+}
