@@ -1,6 +1,6 @@
 import { searchBooks, searchForm } from "./book-search.js";
 import { getCover, getDetails } from "./api-requests.js";
-import { updatePersonalList } from "./personal-list.js";
+import { addRemoveFromPersonalList } from "./personal-list.js";
 export const resultsContainer = document.querySelector("#resultsContainer");
 
 //function to display results from the research
@@ -45,12 +45,13 @@ async function displayBookResults(book) {
 
   //for personal list
   const addToPersonalList = document.createElement("button");
+  addToPersonalList.id = "add-to-list-button"; //adding an ID give a reference for changing the text of the button when the list is cleared through the clear button
   bookCard.append(addToPersonalList);
   addToPersonalList.innerText = localStorage.hasOwnProperty(book.title) ?
     "Remove from my list" : "Add to my list";
   addToPersonalList.addEventListener("click", (e) => {
     e.stopPropagation();
-    updatePersonalList(authorName, title.innerText, addToPersonalList);
+    addRemoveFromPersonalList(authorName, title.innerText, addToPersonalList);
   });
 }
 
