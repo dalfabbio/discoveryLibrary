@@ -36,7 +36,7 @@ async function displayBookResults(book) {
   const title = document.createElement("div");
   bookCard.append(cover, author, title);
   // bookCard.classList.add("flex-col", "justify-center", "cursor-pointer", "max-w-1/3", "sm:max-w-1/4", "md:max-w-1/5", "lg:max-w-1/6", "p-3", "shadow-lg", "bg-white", "rounded", "hover:scale-105", "transition-all", "duration-300");
-  bookCard.classList.add("flex-col", "justify-center", "cursor-pointer", "w-1/3", "sm:w-1/4", "md:w-1/5", "lg:w-1/6", "p-3", "shadow-lg", "bg-white", "rounded", "hover:scale-105", "transition-all", "duration-300");
+  bookCard.classList.add("flex-col", "justify-center", "cursor-pointer", "w-48", "p-3", "shadow-lg", "bg-white", "rounded", "hover:scale-105", "transition-all", "duration-300");
   cover.src = coverUrl;
   cover.classList.add("h-2/3", "object-fit");
   const authorName = book.authors[0].name;
