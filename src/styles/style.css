@@ -5,3 +5,7 @@
 .debugger {
   @apply border-2 border-red-600;
 }
+
+* {
+  @apply font-serif;
+}

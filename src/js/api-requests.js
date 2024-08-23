@@ -5,7 +5,7 @@ export const OL_API_KEY = "https://openlibrary.org";
 export const getBooks = async function (subject) {
   try {
     if (subject) {
-      const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=5`); //limit=5 defines how many books to retrieve
+      const response = await axios.get(`${OL_API_KEY}/subjects/${subject}.json?limit=20`); //limit=5 defines how many books to retrieve
       console.log(subject);
       console.log(response);
       console.log(response.data["work_count"]);
