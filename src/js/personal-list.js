@@ -1,6 +1,24 @@
 const myList = document.querySelector("#my-list");
 const clearList = document.querySelector("#clear-list");
-const copyButton = document.querySelector("#copyButton");
+const copyButton = document.querySelector("#copy-button");
+const myListSwitch = document.querySelector("#my-list-switch");
+const myListContainer = document.querySelector("#my-list-container");
+
+//open and close my list
+myListSwitch.addEventListener("click", (e) => {
+  e.stopPropagation();
+  myListContainer.classList.remove("hidden");
+});
+
+myListContainer.addEventListener("click", (e) => {
+  e.stopPropagation();
+})
+
+window.addEventListener("click", (event) => {
+  if (event.target !== myListContainer && !myListContainer.classList.contains("hidden")) {
+    myListContainer.classList.add("hidden");
+  }
+})
 
 clearList.addEventListener("click", () => {
   let addToListButton = document.querySelectorAll("#add-to-list-button");
@@ -26,7 +44,6 @@ function updatePersonalListText() {
   }
   buttonVisible(copyButton);
   buttonVisible(clearList);
-
 }
 
 updatePersonalListText();

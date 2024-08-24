@@ -3,41 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <title>Discovery Library</title>
   </head>
   <body>
     <div
-      class="py-11 px-11 flex-col items-start justify-center w-screen bg-blue-950 text-slate-100"
+      class="p-9 flex-col items-start justify-center w-screen bg-blue-950 text-slate-100"
     >
-      <div class="flex-col debugger justify-center text-center">
-        <p>Discovery library</p>
-        <p>Let yourself dive into new worlds and discover stories</p>
+      <div class="flex-col justify-center text-center">
+        <p class="text-2xl">Discovery library</p>
+        <p class="italic">
+          Let yourself dive into new worlds and discover terrific stories!
+        </p>
       </div>
 
-      <form id="search">
+      <form id="search" class="flex justify-center m-3">
         <input
-          class="debugger"
+          class="rounded mx-2 p-2 bg-blue-100 text-blue-950 placeholder:italic placeholder:text-blue-800 placeholder:text-center"
           type="text"
           id="searchBox"
           name="searchBox"
-          placeholder="search for your favourite book"
+          placeholder="Pick a genre!"
         />
-        <button type="submit" class="border-t-neutral-900">search</button>
+        <button type="submit" class="border-t-neutral-900">
+          &#128269; Find something to read!
+        </button>
       </form>
+    </div>
+
+    <div
+      id="my-list-switch"
+      class="fixed top-3 right-3 bg-blue-950 z-10 text-slate-100 p-2 border-2 border-slate-100 rounded-lg cursor-pointer"
+    >
+      My list
     </div>
 
     <div
       id="resultsContainer"
       class="flex flex-wrap gap-2 justify-center"
     ></div>
-
-    <div id="my-list-container" class="fixed debugger w-1/4 top-3 right-0">
-      <button id="clear-list" class="absolute top-0 right-0 hidden">
-        clear list
-      </button>
-      <p class="text-center text-3xl">My list</p>
-      <ul id="my-list"></ul>
-      <button id="copyButton" class="hidden">copy the list</button>
+    <div class="w-full">
+      <div
+        id="my-list-container"
+        class="fixed max-w-60 sm:max-w-96 top-3 right-3 bg-blue-950 z-10 text-slate-100 border-2 border-slate-100 p-2 rounded-lg hidden transition-all duration-500"
+      >
+        <button
+          id="clear-list"
+          class="absolute top-1 right-2 hidden rounded-lg bg-blue-100 px-1 text-blue-950"
+        >
+          clear
+        </button>
+        <p class="text-center text-2xl">My list</p>
+        <ul id="my-list"></ul>
+        <button
+          id="copy-button"
+          class="hidden rounded-lg bg-blue-100 px-1 text-blue-950 my-1"
+        >
+          copy the list
+        </button>
+      </div>
     </div>
   </body>
 </html>

@@ -40,7 +40,7 @@ async function displayBookResults(book) {
   bookText.append(author, title);
   bookText.classList.add("flex", "flex-col", "items-center", "justify-start");
   cover.classList.add("justify-self-start");
-  addToPersonalList.classList.add("absolute", "bottom-3", "right-3", "text-xs", "rounded-lg", "border-2", "bg-blue-500", "p-0.5", "text-slate-50", "hover:bg-transparent", "hidden");
+  addToPersonalList.classList.add("absolute", "bottom-3", "right-3", "text-xs", "rounded-lg", "border-2", "bg-blue-500", "p-0.5", "text-slate-50", "hover:bg-blue-950", "hidden");
 
 
   bookCard.append(cover, bookText, addToPersonalList);
@@ -109,17 +109,18 @@ async function displayDetails(bookKey, author, cover) {
   const detailsAuthor = document.createElement("div");
   const detailsDescription = document.createElement("div");
   const detailsCover = document.createElement("img");
-  const detailsClose = document.createElement("div");
+  const detailsClose = document.createElement("img");
   const detailsText = document.createElement("div");
 
   detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "left-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("flex", "sm:flex-row", "flex-nowrap", "debugger", "sm:w-1/2", "lg:w-1/3", "max-h-1/2", "bg-white", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
-  detailsClose.classList.add("absolute", "right-0", "top-0", "p-5", "cursor-pointer");
+  detailsCard.classList.add("flex", "sm:flex-row", "flex-nowrap", "border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-1/2", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsClose.classList.add("absolute", "right-2", "top-2", "cursor-pointer", "w-4", "h-4", "z-10");
   detailsText.classList.add("flex", "flex-col");
   // detailsCover.classList.add("max:w-1/2", "m-3", "object-contain");
   detailsAuthor.classList.add("italic");
   detailsTitle.classList.add("font-bold");
   detailsDescription.classList.add("overflow-auto");
+  detailsClose.src = "../assets/close-icon.png";
 
   detailsText.append(detailsAuthor, detailsTitle, detailsDescription);
   detailsCard.append(detailsText, detailsClose);
@@ -132,7 +133,6 @@ async function displayDetails(bookKey, author, cover) {
   detailsCover.src = cover;
   console.log(details);
   detailsDescription.innerText = typeof details.data.description == "object" ? details.data.description.value : details.data.description; //description key might be an object
-  detailsClose.innerText = "X";
 
   detailsContainer.addEventListener("click", (event) => {
     if (event.target === detailsContainer) {
@@ -146,3 +146,5 @@ async function displayDetails(bookKey, author, cover) {
     document.body.classList.remove("overflow-hidden");
   })
 }
+
+

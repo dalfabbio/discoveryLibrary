@@ -18,3 +18,23 @@ body {
   @apply bg-blue-100;
   @apply text-blue-950;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-blue-950;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-100;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-100;
+}

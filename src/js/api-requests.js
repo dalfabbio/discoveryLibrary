@@ -18,16 +18,16 @@ export const getBooks = async function (subject) {
 }
 
 
-export const getCover = async function getCover(key) {
-  const coverUrl = `https://covers.openlibrary.org/b/id/${key}-M.jpg?default=false`;
-  const fallbackUrl = "../assets/images/no-cover.jpg";
-  try {
-    const response = await axios.get(coverUrl);
-    if (response.status === 200) return coverUrl;
-  } catch (error) {
-    return fallbackUrl;
-  }
-}
+// export const getCover = async function getCover(key) {
+//   const coverUrl = `https://covers.openlibrary.org/b/id/${key}-M.jpg?default=false`;
+//   const fallbackUrl = "../assets/images/no-cover.jpg";
+//   try {
+//     const response = await axios.get(coverUrl);
+//     if (response.status === 200) return coverUrl;
+//   } catch (error) {
+//     return fallbackUrl;
+//   }
+// }
 
 export async function getDetails(key) {
   try {
