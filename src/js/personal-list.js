@@ -5,7 +5,7 @@ const copyButton = document.querySelector("#copyButton");
 clearList.addEventListener("click", () => {
   let addToListButton = document.querySelectorAll("#add-to-list-button");
   for (let i = 0; i < addToListButton.length; i++) {
-    addToListButton[i].innerText = "+";
+    addToListButton[i].innerText = "Add";
   }
   localStorage.clear();
   updatePersonalListText();
@@ -34,11 +34,11 @@ updatePersonalListText();
 export function addRemoveFromPersonalList(author, title, button) {
   if (localStorage.hasOwnProperty(title)) {
     localStorage.removeItem(title);
-    button.innerText = "+";
+    button.innerText = "Add";
   }
   else {
     localStorage.setItem(title, author);
-    button.innerText = "-";
+    button.innerText = "Remove";
   };
   updatePersonalListText();
 }

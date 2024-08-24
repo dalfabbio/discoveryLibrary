@@ -11,3 +11,10 @@
   @apply text-sm;
   @apply sm:text-base;
 }
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  @apply bg-blue-100;
+  @apply text-blue-950;
+}
