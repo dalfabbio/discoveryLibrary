@@ -8,4 +8,6 @@
 
 * {
   @apply font-serif;
+  @apply text-sm;
+  @apply sm:text-base;
 }
