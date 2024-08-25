@@ -2,7 +2,7 @@ import { searchBooks, searchForm } from "./book-search.js";
 import { getDetails } from "./api-requests.js";
 import { addRemoveFromPersonalList } from "./personal-list.js";
 import { noSubjectProvided, noResults } from "./elements.js";
-
+import closingIcon from "../assets/close-icon.png";
 export const resultsContainer = document.querySelector("#resultsContainer");
 
 //function to display results from the research
@@ -117,13 +117,13 @@ async function displayDetails(bookKey, author) {
 
   //layout for the details
   detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "left-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("flex", "sm:flex-row", "flex-nowrap", "border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[50%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsCard.classList.add("flex", "sm:flex-row", "flex-nowrap", "border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
   detailsClose.classList.add("absolute", "right-2", "top-2", "cursor-pointer", "w-4", "h-4", "z-10");
   detailsText.classList.add("flex", "flex-col");
   detailsAuthor.classList.add("italic");
   detailsTitle.classList.add("font-bold");
   detailsDescription.classList.add("overflow-auto");
-  detailsClose.src = "../assets/close-icon.png";
+  detailsClose.src = closingIcon;
 
   detailsText.append(detailsAuthor, detailsTitle, detailsDescription);
   detailsCard.append(detailsText, detailsClose);

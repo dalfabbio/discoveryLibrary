@@ -25,7 +25,7 @@ module.exports = {
     runtimeChunk: 'single',
   },
 
-    module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
@@ -53,8 +53,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './src/assets/favicon.ico',
     }),
-    
-  
+
+
   ],
 };
