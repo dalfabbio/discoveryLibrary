@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
+    <meta
+      property="og:url"
+      content="https://dalfabbio.github.io/discoveryLibrary/"
+    />
+    <meta property="og:title" content="Discovery Library" />
+    <meta
+      property="og:description"
+      content="Let yourself dive into new worlds and discover terrific stories!"
+    />
+
     <title>Discovery Library</title>
   </head>
   <body>
@@ -43,7 +53,10 @@
       id="resultsContainer"
       class="flex flex-wrap gap-2 justify-center"
     ></div>
-    <div id="no-results"></div>
+    <div
+      id="no-results"
+      class="m-auto my-3 text-blue-950 border-2 border-blue-950 p-2 rounded-lg w-fit text-center hidden"
+    ></div>
 
     <div class="w-full">
       <div
@@ -73,5 +86,13 @@
     >
       Top
     </button>
+    <footer class="fixed ms-[45%] bottom-1 text-xs w-fit">
+      Made by
+      <a
+        class="text-xs underline"
+        href="https://github.com/dalfabbio/tomatoCounter"
+        >dalfabbio</a
+      >
+    </footer>
   </body>
 </html>

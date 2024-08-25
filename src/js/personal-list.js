@@ -9,11 +9,11 @@ myListSwitch.addEventListener("click", (e) => {
   e.stopPropagation();
   myListContainer.classList.remove("hidden");
 });
-
+//prevents closing clicking on myLIst
 myListContainer.addEventListener("click", (e) => {
   e.stopPropagation();
 })
-
+//close when clicking outside
 window.addEventListener("click", (event) => {
   if (event.target !== myListContainer && !myListContainer.classList.contains("hidden")) {
     myListContainer.classList.add("hidden");
@@ -60,7 +60,7 @@ export function addRemoveFromPersonalList(author, title, button) {
   updatePersonalListText();
 }
 
-
+//function to show or hide the copy and clear buttons
 function buttonVisible(btn) {
   if (localStorage.length > 0) {
     btn.classList.remove("hidden");

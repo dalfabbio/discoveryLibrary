@@ -25,5 +25,17 @@ export function showLoader(yesNo) {
   else {
     loader.remove();
   }
-
 }
+
+
+//fallback for research
+export const noResultsContainer = document.querySelector("#no-results");
+export function noSubjectProvided() {
+  noResultsContainer.classList.remove("hidden");
+  noResultsContainer.innerText = ("please enter a valid subject");
+};
+
+export function noResults() {
+  noResultsContainer.classList.remove("hidden");
+  noResultsContainer.innerText = ("Sorry, no results found for your research");
+};
