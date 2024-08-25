@@ -1,16 +1,21 @@
 # Discovery Library
 
+<a id="readme-top"></a>
+
+[GIVE IT A TRY!]
+
 ## About the Project
 
-The **Discovery Library** is a web application designed to allow users to explore and discover books based on different categories or keywords. With a clean, modern interface, this application provides an easy way to find, view, and manage books of interest. By leveraging the Open Library API, users can search for books, view detailed information, and save their favorite books to a personal list.
+The **Discovery Library** is a web application designed to allow users to explore and discover books, starting from a favourite genre. With a clean interface, this application provides an easy way to find, view, and manage books of interest. By leveraging the Open Library API, users can search for books, view detailed information, and save their favorite books to a personal list.
 
 ## Functionalities
 
-- **Search for Books**: Search for books by entering keywords or selecting categories.
-- **View Book Details**: Click on a book to view detailed information, including the title, author, and description.
-- **Personal Book List**: Add books to a personal list for future reference and manage this list with options to view and remove books.
+- **Search for Books**: Search for books by entering a genre in the search box.
+- **View Book Details**: Click on a book to view detailed information.
+- **Personal Book List**: Add books to a personal list for future reference.
 - **Copy List**: Easily copy your personalized list of books for sharing or saving elsewhere.
 - **Responsive Design**: Optimized for both desktop and mobile devices, providing a seamless user experience.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Installation
 
@@ -22,35 +27,27 @@ To run this project locally, follow these steps:
    git clone https://github.com/dalfabbio/discoveryLibrary.git
    ```
 
-To run this project locally, follow these steps:
-
-1. **Navigate to the project directory**:
+2. **Navigate to the project directory**:
 
    ```bash
    cd discoveryLibrary
    ```
 
-2. **Install the required dependencies**: Make sure you have `npm` installed, then run:
+3. **Install the required dependencies**: Make sure you have `npm` installed, then run:
 
    ```bash
    npm install
    ```
 
-3. **Start the application**:
+4. **To start and change the application**:
    ```bash
    npm run dev
    ```
-4. **Built the application**:
+5. **To build the application**:
    ```bash
-   npm run buil
+   npm run build
    ```
-
-## Usage
-
-1. **Search for Books**: Enter a keyword in the search bar and click the search button to find books related to your query.
-2. **View Details**: Click on a book card to view more details about the book.
-3. **Manage Your List**: Add books to your personal list using the provided button. Click on the list icon to view or copy your list.
-4. **Responsive Features**: Enjoy a fully responsive design that adapts to various screen sizes, making it easy to browse books on the go.
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Built With
 
@@ -59,6 +56,7 @@ To run this project locally, follow these steps:
 - **JavaScript**: For interactive elements and functionality.
 - **Open Library API**: To fetch book data.
 - **Node.js and npm**: For managing dependencies and running local development servers.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
 
@@ -69,7 +67,17 @@ Contributions are welcome! If you have suggestions for improvements or want to r
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## License
+## Contacts
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Feel free to reach me if you have any advice or you want to collaborate!
+
+[![linkedin](./src/assets/linkedin.png)][linkedinUrl]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS -->
+
+[linkedinUrl]: https://www.linkedin.com/in/alessandro-fabbian-2a8261101/
+[GIVE IT A TRY!]: https://dalfabbio.github.io/discoveryLibrary/
