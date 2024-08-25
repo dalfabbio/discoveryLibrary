@@ -1,11 +1,14 @@
 import "./styles/style.css";
 import { searchForm } from "./js/book-search.js";
-import { displaySearchResults } from "./js/display-results.js";
+import { displaySearchResults, resultsContainer } from "./js/display-results.js";
+import { showLoader } from "./js/elements.js";
 
-searchForm.addEventListener("submit", (e) => {
+searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   resultsContainer.innerHTML = "";
-  displaySearchResults();
+  showLoader(true);
+  await displaySearchResults();
+  showLoader(false);
 }
 );
 

@@ -7,6 +7,7 @@ export const resultsContainer = document.querySelector("#resultsContainer");
 export async function displaySearchResults() {
   try {
     const response = await searchBooks();
+
     if (searchForm.searchBox.value === "") {
       noSubjectProvided();
       return;
@@ -22,9 +23,10 @@ export async function displaySearchResults() {
     })
   }
   catch (e) {
-    console.log("sorry, no results found due to some malfunction / DISPLAY RESULT");
+    alert("Sorry, an error occured, please try again later");
   };
 }
+
 
 async function displayBookResults(book) {
   const bookCard = document.createElement("div");
