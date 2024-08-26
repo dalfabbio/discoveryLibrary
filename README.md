@@ -51,9 +51,9 @@ To run this project locally, follow these steps:
 
 ## Built With
 
-- **HTML**: For structuring the content on the web pages.
+- **HTML**: For structuring the content on the web page.
 - **CSS & Tailwind CSS**: For styling and creating a responsive design.
-- **JavaScript**: For interactive elements and functionality.
+- **JavaScript**: For interactive elements and functionalities.
 - **Open Library API**: To fetch book data.
 - **Node.js and npm**: For managing dependencies and running local development servers.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
