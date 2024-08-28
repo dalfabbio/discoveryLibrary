@@ -38,7 +38,7 @@ async function displayBookResults(book) {
   const coverImg = document.createElement("img");
   const bookText = document.createElement("div");
   const author = document.createElement("div");
-  const title = document.createElement("div");
+  const title = document.createElement("p");
   const addToPersonalList = document.createElement("button");
 
   //styling and organizing elements
@@ -49,18 +49,18 @@ async function displayBookResults(book) {
   cover.classList.add("h-2/3", "flex", "justify-center", "justify-self-start");
   coverImg.classList.add("h-full", "rounded-lg");
 
-  bookText.classList.add("flex", "flex-col", "items-center", "justify-start");
+  bookText.classList.add("flex", "flex-col", "items-center", "justify-start", "h-1/3");
   addToPersonalList.classList.add("absolute", "bottom-3", "right-3", "text-xs", "rounded-lg", "border-2", "bg-blue-500", "p-0.5", "text-slate-50", "hover:bg-blue-950", "hidden");
 
   bookCard.append(cover, bookText, addToPersonalList);
-  bookCard.classList.add("flex", "flex-col", "cursor-pointer", "w-44", "p-3", "hover:shadow-xl", "rounded-lg", "hover:scale-105", "transition-all", "duration-300", "gap-2", "relative", "transition-all", "hover:bg-blue-300");
+  bookCard.classList.add("flex", "flex-col", "cursor-pointer", "w-44", "p-3", "hover:shadow-xl", "rounded-lg", "hover:scale-105", "transition-all", "duration-300", "gap-2", "relative", "transition-all", "hover:bg-blue-300", "h-80");
 
   //details content
   const authorName = book.authors[0].name;
   author.innerText = authorName;
   author.classList.add("text-wrap", "italic", "text-center");
   title.innerText = book.title;
-  title.classList.add("text-wrap", "text-center", "font-bold");
+  title.classList.add("text-center", "font-bold", "overflow-hidden");
   resultsContainer.append(bookCard);
 
   //for showing details
@@ -117,7 +117,7 @@ async function displayDetails(bookKey, author) {
 
   //layout for the details
   detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "left-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("flex", "sm:flex-row", "flex-nowrap", "border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsCard.classList.add("border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
   detailsClose.classList.add("absolute", "right-2", "top-2", "cursor-pointer", "w-4", "h-4", "z-10");
   detailsText.classList.add("flex", "flex-col");
   detailsAuthor.classList.add("italic");

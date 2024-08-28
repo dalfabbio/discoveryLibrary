@@ -1,7 +1,7 @@
 const myList = document.querySelector("#my-list");
 const clearList = document.querySelector("#clear-list");
 const copyButton = document.querySelector("#copy-button");
-const myListSwitch = document.querySelector("#my-list-switch");
+export const myListSwitch = document.querySelector("#my-list-switch");
 const myListContainer = document.querySelector("#my-list-container");
 
 //open and close my list
