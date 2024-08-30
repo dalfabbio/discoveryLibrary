@@ -112,18 +112,18 @@ async function displayDetails(bookKey, author) {
   const detailsCard = document.createElement("div");
   const detailsTitle = document.createElement("div");
   const detailsAuthor = document.createElement("div");
-  const detailsDescription = document.createElement("div");
+  const detailsDescription = document.createElement("p");
   const detailsClose = document.createElement("img");
   const detailsText = document.createElement("div");
 
   //layout for the details
   detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "left-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "justify-center", "relative");
+  detailsCard.classList.add("border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "mx-2", "justify-center", "relative");
   detailsClose.classList.add("absolute", "right-2", "top-2", "cursor-pointer", "w-4", "h-4", "z-10");
   detailsText.classList.add("flex", "flex-col");
   detailsAuthor.classList.add("italic");
   detailsTitle.classList.add("font-bold");
-  detailsDescription.classList.add("overflow-auto");
+  detailsDescription.classList.add("overflow-auto", "h-full");
   detailsClose.src = closingIcon;
 
   detailsText.append(detailsAuthor, detailsTitle, detailsDescription);
