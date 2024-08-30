@@ -57,7 +57,7 @@ async function displayBookResults(book) {
   bookCard.classList.add("flex", "flex-col", "cursor-pointer", "w-44", "p-3", "hover:shadow-xl", "rounded-lg", "hover:scale-105", "transition-all", "duration-300", "gap-2", "relative", "transition-all", "hover:bg-blue-300", "h-80");
 
   //details content
-  const authorName = book?.authors[0]?.name;
+  const authorName = book.authors.length > 0 ? book.authors[0].name : "Unknown author";
   author.innerText = authorName;
   author.classList.add("text-wrap", "italic", "text-center");
   title.innerText = book.title;
