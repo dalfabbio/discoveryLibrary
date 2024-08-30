@@ -14,7 +14,6 @@ export const getBooks = async function (subject) {
   }
 }
 
-
 export async function getDetails(key) {
   try {
     const detailsUrl = `https://openlibrary.org${key}.json`;

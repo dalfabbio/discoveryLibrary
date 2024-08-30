@@ -2,14 +2,15 @@ import { searchBooks, searchForm } from "./book-search.js";
 import { getDetails } from "./api-requests.js";
 import { addRemoveFromPersonalList } from "./personal-list.js";
 import { noSubjectProvided, noResults } from "./elements.js";
-import closingIcon from "../assets/close-icon.png";
+import closingIcon from "../assets/close_icon.png";
+import noCoverAvailable from "../assets/no_cover_available.png";
 export const resultsContainer = document.querySelector("#resultsContainer");
 
 //function to display results from the research
 export async function displaySearchResults() {
   try {
     const response = await searchBooks();
-
+    console.log(response);
     if (searchForm.searchBox.value === "") {
       noSubjectProvided();
       return;
@@ -34,7 +35,7 @@ async function displayBookResults(book) {
   //elements for the results
   const bookCard = document.createElement("div");
   const cover = document.createElement("div");
-  const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false`;
+  const coverUrl = book.cover_id != null ? `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg?default=false` : noCoverAvailable;
   const coverImg = document.createElement("img");
   const bookText = document.createElement("div");
   const author = document.createElement("div");
@@ -56,7 +57,7 @@ async function displayBookResults(book) {
   bookCard.classList.add("flex", "flex-col", "cursor-pointer", "w-44", "p-3", "hover:shadow-xl", "rounded-lg", "hover:scale-105", "transition-all", "duration-300", "gap-2", "relative", "transition-all", "hover:bg-blue-300", "h-80");
 
   //details content
-  const authorName = book.authors[0].name;
+  const authorName = book?.authors[0]?.name;
   author.innerText = authorName;
   author.classList.add("text-wrap", "italic", "text-center");
   title.innerText = book.title;
