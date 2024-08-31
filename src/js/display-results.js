@@ -123,7 +123,7 @@ async function displayDetails(bookKey, author) {
   detailsText.classList.add("flex", "flex-col", "h-full", "w-full");
   detailsAuthor.classList.add("italic");
   detailsTitle.classList.add("font-bold");
-  detailsDescription.classList.add("w-full", "min-h-[30vh]", "max-h-[70vh]", "overflow-auto", "overflow-x-hidden");
+  detailsDescription.classList.add("w-full", "min-h-[10vh]", "max-h-[70vh]", "overflow-auto", "overflow-x-hidden");
   detailsClose.src = closingIcon;
 
   detailsText.append(detailsAuthor, detailsTitle, detailsDescription);
