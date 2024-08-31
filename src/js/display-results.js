@@ -61,7 +61,7 @@ async function displayBookResults(book) {
   author.innerText = authorName;
   author.classList.add("text-wrap", "italic", "text-center");
   title.innerText = book.title;
-  title.classList.add("text-center", "font-bold", "overflow-hidden");
+  title.classList.add("text-center", "font-bold", "line-clamp-3");
   resultsContainer.append(bookCard);
 
   //for showing details
@@ -112,18 +112,18 @@ async function displayDetails(bookKey, author) {
   const detailsCard = document.createElement("div");
   const detailsTitle = document.createElement("div");
   const detailsAuthor = document.createElement("div");
-  const detailsDescription = document.createElement("p");
+  const detailsDescription = document.createElement("div");
   const detailsClose = document.createElement("img");
   const detailsText = document.createElement("div");
 
   //layout for the details
   detailsContainer.classList.add("flex", "justify-center", "fixed", "top-0", "left-0", "items-center", "z-50", "backdrop-blur", "w-screen", "h-screen");
-  detailsCard.classList.add("border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "max-h-[70%]", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "mx-2", "justify-center", "relative");
+  detailsCard.classList.add("border-2", "border-blue-950", "sm:w-1/2", "lg:w-1/3", "bg-blue-100", "rounded-lg", "shadow-lg", "p-5", "mx-2", "justify-center", "relative");
   detailsClose.classList.add("absolute", "right-2", "top-2", "cursor-pointer", "w-4", "h-4", "z-10");
-  detailsText.classList.add("flex", "flex-col");
+  detailsText.classList.add("flex", "flex-col", "h-full", "w-full");
   detailsAuthor.classList.add("italic");
   detailsTitle.classList.add("font-bold");
-  detailsDescription.classList.add("overflow-auto", "h-full");
+  detailsDescription.classList.add("w-full", "min-h-[30vh]", "max-h-[70vh]", "overflow-auto", "overflow-x-hidden");
   detailsClose.src = closingIcon;
 
   detailsText.append(detailsAuthor, detailsTitle, detailsDescription);
@@ -149,5 +149,4 @@ async function displayDetails(bookKey, author) {
     document.body.classList.remove("overflow-hidden");
   })
 }
-
 

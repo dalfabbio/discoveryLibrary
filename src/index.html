@@ -38,27 +38,20 @@
         class="flex flex-col gap-x-3 gap-y-4 justify-center items-center m-3 sm:flex-row mt-7 w-full"
       >
         <label for="searchBox">Find something to read:</label>
-        <div>
+        <div class="relative">
           <input
-            class="rounded mx-2 p-2 bg-blue-100 text-blue-950 placeholder:italic placeholder:text-blue-800 text-center relative"
+            class="rounded mx-2 p-2 bg-blue-100 text-blue-950 placeholder:italic placeholder:text-blue-800 text-center w-72"
             type="text"
             id="searchBox"
             name="searchBox"
             placeholder="Enter a genre"
           />
-          <button type="submit" class="border-t-neutral-900 absolute mt-2">
+          <button type="submit" class="border-t-neutral-900 mt-2 absolute">
             &#128269;
           </button>
         </div>
       </form>
     </header>
-
-    <div
-      id="my-list-switch"
-      class="fixed top-3 right-3 bg-blue-950 z-10 text-slate-100 p-1 border-2 border-slate-100 rounded-lg cursor-pointer hidden"
-    >
-      My list
-    </div>
 
     <div
       id="resultsContainer"
@@ -69,6 +62,13 @@
       class="m-auto my-3 text-blue-950 border-2 border-blue-950 p-2 rounded-lg w-fit text-center hidden"
     ></div>
 
+    <!-- My list -->
+    <div
+      id="my-list-switch"
+      class="fixed top-3 right-3 bg-blue-950 z-10 text-slate-100 p-1 border-2 border-slate-100 rounded-lg cursor-pointer hidden"
+    >
+      My list
+    </div>
     <div class="w-full">
       <div
         id="my-list-container"
