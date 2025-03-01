@@ -22,7 +22,6 @@ export async function displaySearchResults() {
     const booksList = response.data.works;
     booksList.forEach(element => {
       displayBookResults(element);
-
     })
   }
   catch (e) {
@@ -85,6 +84,7 @@ async function displayBookResults(book) {
       (navigator.maxTouchPoints > 0) ||
       (navigator.msMaxTouchPoints > 0);
   }
+
   if (is_touch_enabled() && addToPersonalList.classList.contains("hidden")) {
     addToPersonalList.classList.remove("hidden");
   }
