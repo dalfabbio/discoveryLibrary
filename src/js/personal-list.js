@@ -71,11 +71,10 @@ function buttonVisible(btn) {
 
 copyButton.addEventListener("click", function () {
   const ul = document.querySelector("#my-list");
-  // Estrae il testo dai figli dell'elemento <ul>
+  // extract text content from each li element and join it with a newline
   const textToCopy = Array.from(ul.getElementsByTagName("li"))
     .map(li => li.textContent)
     .join("\n");
   navigator.clipboard.writeText(textToCopy);
-  // Opzionale: notifica all'utente che il testo è stato copiato
   alert("List copied!");
 });
